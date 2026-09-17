@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Cheat FPS</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<div id="app">
+<section id="menu" class="screen">
+  <h1>CHEAT <span>FPS</span></h1><p>핵이 규칙인 3 VS 3 서바이벌</p>
+  <button data-mode="ai">AI전</button><button data-mode="local">로컬 플레이</button>
+  <button id="settingsBtn">설정</button>
+  <div id="settings" class="panel hidden"><label>감도 <input id="sens" type="range" min=".5" max="2" step=".1" value="1"></label><p>PC: WASD 이동 · 마우스 조준 · 클릭 사격</p><p>모바일: 가상 스틱 · 오른쪽 드래그 조준 · FIRE</p></div>
+</section>
+<section id="lobby" class="screen hidden">
+  <h2>팀 편성</h2><p id="modeText"></p>
+  <div class="teamgrid"><div><h3>TEAM A</h3><div id="teamA"></div></div><div><h3>TEAM B</h3><div id="teamB"></div></div></div>
+  <div class="loadout"><b>핵 장착</b>
+    <label><input type="checkbox" data-cheat="aim"> 에임핵</label>
+    <label><input type="checkbox" data-cheat="esp"> ESP</label>
+    <label><input type="checkbox" data-cheat="norecoil"> 무반동</label>
+    <label><input type="checkbox" data-cheat="infinite"> 무한탄창</label>
+  </div>
+  <button id="ready">전투 참가</button><button id="back">뒤로</button>
+</section>
+<section id="game" class="screen hidden">
+  <canvas id="view"></canvas>
+  <div id="hud"><div class="top"><span id="round"></span><span id="score"></span><span id="timer"></span></div>
+    <div id="cross">+</div><div id="hp">HP 100</div><div id="cheats"></div><div id="log"></div>
+    <div id="alive"></div>
+  </div>
+  <div id="mobile"><div id="stick"><i></i></div><div id="look"></div><button id="fire">FIRE</button><button class="ct" data-cheat="aim">AIM</button><button class="ct" data-cheat="esp">ESP</button><button class="ct" data-cheat="norecoil">NR</button><button class="ct" data-cheat="infinite">INF</button></div>
+</section>
+<section id="result" class="screen hidden"><h1 id="resultTitle"></h1><div id="resultStats"></div><button id="again">다시 하기</button><button id="home">메인 메뉴</button></section>
+</div>
+<script src="/static/game.js"></script></body></html>
